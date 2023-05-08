@@ -1,0 +1,30 @@
+﻿@model Urun
+
+
+
+ <div class="jumbotrom mt-3 ml-6">
+    <h1>Silmek istediğinize emin misiniz?</h1>
+<h5 class="text-danger">@Model.Marka @Model.Ad</h5>
+<h5 class="text-primary">(@Model.Barkod)</h5>
+<hr>
+
+<img src="/Resimler/@Model.Resim" style="width: 250px;" />
+
+<div class="row">
+    <div>
+        <form asp-action="Delete">
+
+            <button type="submit" class="btn btn-danger"> Sil </button>
+                <a asp-action="Index" class="btn btn-secondary">Geri Dön</a>
+        </form>
+
+    </div> 
+
+
+</div>
+
+
+<hr />
+
+
+</div>

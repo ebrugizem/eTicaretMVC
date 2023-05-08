@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Urun>     //UrunIslemleri(Controller) / Index /(_context.Urunler) 
+
+
+<div class="jumbotron mt-5">
+
+<h2 id="baslik" >Alışveriş Sepeti</h2>
+
+<a class="btn btn-outline-info mt-3" asp-action="Create" > Yeni Ürün</a>
+
+<table class="table table-hover mt-3 table-sm" >
+    <thead>
+        <th>Barkod</th>
+        <th>Marka</th>
+        <th>Ürün</th>
+        <th>Fiyat</th>
+        <th>İşlemler</th>
+    </thead>
+   
+    <tbody>
+         @foreach (var item in Model)
+         {
+              <tr>
+                  <td>@item.Barkod</td>
+                  <td>@item.Marka</td>
+                  <td>@item.Ad</td>
+                  <td>@item.Fiyat TL</td>
+                  <td>
+                      <a class="btn btn-primary btn-sm" asp-action="Details" asp-route-id="@item.Barkod" > Detay</a>
+                       <a class="btn btn-warning ml-4 btn-sm" asp-action="Edit" asp-route-id="@item.Barkod"> Düzenle</a>
+                        <a class="btn btn-danger ml-4 btn-sm " asp-action="Delete" asp-route-id="@item.Barkod" > Sil</a>
+                  </td>
+              </tr>
+         }
+    </tbody>
+</table>
+</div>
+
+<style>
+    #baslik {
+        font-family: sans-serif;
+        color: maroon;
+        border-bottom: 1px solid rgb(200, 200, 200);
+    }
+</style>
+

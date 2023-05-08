@@ -1,0 +1,15 @@
+﻿@model Urun
+
+<h1 class="text-danger">@Model.Marka @Model.Ad</h1>
+<h5 class="text-primary">(@Model.Barkod)</h5> 
+<hr>
+
+<img src="/Resimler/@Model.Resim" style="width: 250px;" />
+
+
+<h4 class="text-dark">Ürünün Fiyati: @Model.Fiyat TL</h4>
+<small class="text-muted">@Model.Kategori</small>
+
+<hr />
+
+<a asp-action="Index" class="btn btn-secondary">Geri Dön</a>
